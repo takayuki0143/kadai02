@@ -1,0 +1,132 @@
+body{
+    background-color: #ffea00;
+}
+.title{
+    margin-bottom: 100px;
+    margin-left: 75px;
+    font-weight: bold;
+}
+.title h1{
+    color: blue;
+}
+.warning{
+    color: red;
+}
+.mine-cards{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 100px;
+    font-size: 24px;
+}
+.ene-card{
+    display: flex;
+    font-size: 24px;
+}
+#outcome{
+    margin-bottom: 100px;
+}
+.posing{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.pose{
+    flex: 33.33%;
+    margin-bottom: 30px;
+}
+.pose p{
+    width: 320px;
+    margin: auto;
+    font-weight: bold;
+}
+.poses{
+    color: red;
+    font-size: 20px;
+}
+.pose img{
+    display: flex;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.card-warpper{
+    margin-left: 75px;
+}
+#change1{
+    display: none;
+}
+#change2{
+    display: none;
+}
+#change3{
+    display: none;
+}
+#enemy-cards{
+    display: none;
+}
+.sum{
+    text-align: center;
+    margin-bottom: 50px;
+}
+span{
+    color: blue;
+    font-size: 40px;
+    font-weight: bold;
+}
+#outcome{
+    font-size: 100px;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+#distribution{
+    display: block;
+    margin: auto;
+    margin-bottom: 50px;
+}
+#distribution:hover{
+    color: red;
+}
+#change1:hover{
+    color: red;
+}
+#change2:hover{
+    color: red;
+}
+#change3:hover{
+    color: red;
+}
+#enemy-cards:hover{
+    color: red;
+}
+.reload:hover{
+    color: red;
+}
+
+.ene-card{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.change{
+    text-align: center;
+    margin-bottom: 50px;
+}
+button{
+    font-size: 30px;
+    border-radius: 10px;
+    /* background-color:#ee827c; */
+    color: black;
+}
+/* #movie{
+    display: none;
+    text-align: center;
+} */
+
+#reload{
+    display: none;
+    text-align: center;
+}
+.reload{
+    font-size: 100px;
+}

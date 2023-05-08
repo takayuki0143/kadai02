@@ -1,0 +1,35 @@
+#main{
+    background-color: #98d98e;
+}
+.title{
+    font-size: 30px;
+    text-align: center;
+}
+#img{
+    display: flex;
+    margin: auto;
+}
+#toi{
+    font-size: 25px;
+}
+#send{
+    font-size: 25px;
+}
+#print{
+    font-size: 25px;
+}
+#toi{
+    text-align: center;
+    color: blue;
+}
+
+#input{
+    display: flex;
+    justify-content: center;
+}
+#output{
+    text-align: center;
+}
+#start{
+    font-size: 25px;
+}

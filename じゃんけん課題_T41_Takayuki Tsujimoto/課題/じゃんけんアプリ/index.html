@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+<title>筋肉じゃんけん</title>
+</head>
+<body>
+    <audio src="power.mp3" id="sound"></audio>
+    <div class="title">
+    <h1>ルール説明</h1>
+    <h2><span>筋肉じゃんけん</span></h2>
+    <h3>筋肉じゃんけんとは：「筋肉じゃんけん」とは、じゃんけんのルールに基づいて、相手との勝負に勝つために、自分の腕や体の筋肉を使って表現する、ある種の身体表現競技です。(Chat-GPTより) </h3>
+    </div>
+
+        <div class="discription">
+            <img src="img/setumei.jpeg" alt="">
+            <h3 class="gu-discription">
+                <span>グー：モストマスキュラー</span><br>
+                「最も発達した筋肉」という意味の「モストマスキュラー」ポーズは、ボディビル競技において上半身の筋肉を強調する代表的なポーズです。<br>
+                主にフリーポーズ（決勝審査）やポーズダウン（表彰式）で行われています。<br>
+            </h3>
+            <h3 class="tyoki-discription">
+               <span>チョキ：ダブルバイセップス</span><br>
+                バイセップスは上腕二頭筋のことを示しており、二つの上腕二頭筋を美しく見せるポージングでもあります。 <br>
+                力コブを作るようなポージングでもあり、知らない間にダブルバイセップスに近いポーズをしたことがある人も多いのではないでしょうか。<br>
+            </h3>
+            <h3 class="pa-discription">
+                <span>パー：オリバーポーズ</span><br>
+                両手を高々と挙げて、腕の太さや逆三角形の体型を強調する独特のポーズは「オリバーポーズ」と呼ばれ、かつてボディビル大会の最高峰であるミスターオリンピアで活躍した故セルジオ・オリバーが得意としたポーズです。<br>
+                両手を挙げて手首を内側にひねり、手の平を外側に向けるのが特徴です。<br>
+            </h3>
+        </div>
+
+       
+        <div id="image">
+            <div id="you">
+                <img src="img/mostmusculer.jpeg" alt="">
+            </div>
+        </div>
+        <div id="images">
+            <div id="enemy">
+                <img src="img/mostmusculer.jpeg" alt="">
+            </div>
+        </div>
+        <div class="outcome">
+        <div id="outcome"></div>
+        </div>
+
+        <button id="button">
+            <div class="text">ポージングをしてね</div> 
+        </button>
+    
+        
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="JS/app.js"></script>
+</body>
+</html>

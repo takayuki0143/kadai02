@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>きんにく!</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <audio src="mp3/power.mp3" id="power"></audio>
+    <audio src="mp3/lose.mp3" id="lose"></audio>
+    <audio src="mp3/bulk.mp3" id="bulk"></audio>
+    <audio src="mp3/sentou.mp3" id="sentou"></audio>
+    <audio src="mp3/kettei.mp3" id="select"></audio>
+
+
+
+    <!-- ポージングの掛け声 -->
+    <audio src="mp3/ab.mp3" id="ab"></audio>
+    <audio src="mp3/chest.mp3" id="chest"></audio>
+    <audio src="mp3/lat.mp3" id="lat"></audio>
+    <audio src="mp3/side.mp3" id="side"></audio>
+    <audio src="mp3/dodai.mp3" id="dodai"></audio>
+    <audio src="mp3/muscle.mp3" id="muscle"></audio>
+
+    <main>
+        <div class="description">
+            <div class="title">
+            <!-- タイトルとルール説明 -->
+            <h1>きんにく!</h1>
+            <h2>ルール説明</h2>
+            <h3>ランダムにカードが配られるので、手札の2枚を合わせた合計点数が相手より上回っていれば勝ち。<br>
+                ボディビルのポージングによって、各点数が異なってきます。<br>
+                おのれの筋肉を見せつけましょう。 <br>
+                <p class="warning">※手札を変えるボタンはどれか1回しか押すことができないので注意してください。</p> 
+            </h3>
+            <!-- 各ポージングと点数の説明 -->
+            <h3>各ポージングと点数は以下のようにします。</h3>
+            </div>
+
+        <!-- アブドミナルアンドサイ：1点 -->
+        <div class="posing">
+            <div class="pose">
+                <p class="poses">アブドミナルアンドサイ：1点</p>
+                <img src="IMG/abdominalsandthighs.jpg" alt="" id="pose1">
+                <p>アブドミナルは腹筋、サイは脚を意味し、腹筋と脚を強調するポーズです。
+                    腹筋はどれだけ脂肪が少なく絞ってあるかという面が見られますが、脚の方は太さとカットと、両方が審査の対象として見られます。
+                </p>
+            </div>
+
+            <!-- ダブルバイセップス：2点 -->
+            <div class="pose">
+                <p class="poses">ダブルバイセップス：2点</p>
+                <img src="IMG/frotdoublebiceps.jpg" alt="" id="pose2">
+                <p>バイセップスとは上腕二頭筋を意味します。両腕を曲げた状態で上腕二頭筋を見せ、さらにその体勢を前から見せるということでこの名になっています。
+                    両腕を上げていることから逆三角形の体型や腹筋、身体全体のバランスなどを全て見ることができます。
+                </p>
+            </div>
+
+            <!-- サイドトライセップス：3点 -->
+            <div class="pose">
+                <p class="poses">サイドトライセップス：3点</p>
+                <img src="IMG/sidetriceps.jpg" alt="" id="pose3">
+                <p>トライセップスは上腕三頭筋を意味します。腕を横から見せて、上腕三頭筋を強調するポーズです。
+                    横向きの体勢ということで、腕の太さ以外にも、胸の厚みや脚の厚みなど、身体の凹凸が見られるポーズです。
+                </p>
+            </div>
+
+            <!-- ラットスプレッド：4点 -->
+            <div class="pose">
+                <p class="poses">ラットスプレッド：4点</p>
+                <img src="IMG/frontlatspread.jpg" alt="" id="pose4">
+                <p>ラットは背中の筋肉を意味し、スプレッドは広げるという意味ですので、背中の筋肉を広げたポーズという意味になります。
+                    脇の下に見える筋肉は広背筋で、背中の筋肉であり、逆三角形の体型を形作っている筋肉です。
+                </p>
+            </div>
+
+            <!-- サイドチェスト：5点 -->
+            <div class="pose">
+                <p class="poses">サイドチェスト：5点</p>
+                <img src="IMG/sidechest.jpg" alt="" id="pose5">
+                <p>サイドは横、チェストは胸で、胸を強調したところを横から見るという意味のポーズです。
+                    胸の厚みを始めとして、腕の太さや背中や脚など、主に横から身体の厚みを見る他、肩の大きさも強調します。</p>
+            </div>
+
+            <!-- モストマスキュラー：6点 -->
+            <div class="pose">
+                <p class="poses">モストマスキュラー：6点</p>
+                <img src="IMG/mostmuscular.jpg" alt="" id="pose6">
+                <p>身体をやや前傾にして、首の横の僧帽筋や肩の大きさ、腕の太さを強調するポーズです。最も力強いという意味があります。
+                    基本ポーズには含まれていませんので、フリーポーズの時だけ見ることができます。</p>
+            </div>
+        </div>
+        </div>
+
+    
+        <div class="card-warpper">
+                <div class="mine-cards">
+                    <!-- 自分の手札が表示される -->
+                    <div class="me-cards">
+                        あなたのマッチョ(1)
+                    </div>
+                    <div class="my-cards">
+                        あなたのマッチョ(2)
+                    </div>
+                </div>
+                <div class="sum">
+                    <span class="mine-sum">合計</span>点
+                </div>
+
+                <!-- カードを配布するボタン -->
+                <!-- 各カードによって出現率を調整したい！！ -->
+                <button id="distribution">マッチョを配布する</button>
+                <!-- カードを入れ替えるボタン -->
+                <div class="change">
+                <button id="change1" onclick="this.disabled = true;">マッチョを入れ替える(1)</button>
+                <button id="change2" onclick="this.disabled = true;">マッチョを入れ替える(2)</button>
+                <button id="change3" onclick="this.disabled = true;">両方を入れ変える</button>
+                <!-- 勝負するボタン 相手のカードが出現する -->
+                <button id="enemy-cards">勝負する！</button>
+                </div>
+
+            <!-- 相手のカードが出現される -->
+            <div class="ene-card">
+                <div class="enemy-cards">
+                    相手のマッチョ(1)
+                </div>
+                <div class="enemy-cardz">
+                    相手のマッチョ(2)
+                </div>
+            </div>
+            <div class="sum">
+                <span class="enemy-sum">合計</span>点
+            </div>
+        
+    <!-- 結果が出力される -->
+            <div id="outcome"></div>
+            <div id="reload">
+                <button class="reload">
+                    もう1回勝負する！
+                </button>
+            </div>
+        </div>
+    <!-- 勝つとフリーポーズが流れるようにしたい！！ -->
+        <div id="movie">
+            <!-- <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/-ureCl4pDxU"
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+            </iframe> -->
+        </div>
+        
+        
+
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="JS/app.js"></script>
+</body>
+</html>

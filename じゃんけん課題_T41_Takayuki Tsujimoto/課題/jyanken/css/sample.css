@@ -1,0 +1,80 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+}
+header{
+    background-color: #e6cde3;
+    border: 3px solid red;
+    text-align: center;
+}
+header h1{
+    font-size: 100px;
+    color: #19448e;
+}
+main{
+    border-bottom:1px solid #ccc;
+}
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
+ul{
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+}
+li{
+    list-style-type:none;
+    border: 1px solid #666;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+li:hover{
+    background: #ec6d51;
+    color:#fff;
+}
+#omikuji{
+    text-align: center;
+}
+.pon{
+    font-size: 50px;
+    text-align: center;
+    background-color:#aacf53 ;
+}
+.image{
+    width: 300px;
+    height: 300px;
+    vertical-align: middle;
+}
+.pc{
+    font-size: 100px;
+    color: #19448e;
+    text-align: center;
+    background-color:#fddea5 ;
+}
+.jude{
+    font-size: 100px;
+    color: #19448e;
+    text-align: center;
+    font-weight: bold;
+   background-color: #a59aca;
+   margin-top: 30px;
+   border: 3px solid red;
+}
+.outcome{
+    width: 800px;
+    height: 800px;
+    vertical-align: middle;
+}

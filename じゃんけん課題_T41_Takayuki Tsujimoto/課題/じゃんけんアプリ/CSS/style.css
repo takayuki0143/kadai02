@@ -1,0 +1,80 @@
+body{
+    background-color: yellow;
+    background-size:  cover;  
+}
+
+.discription{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.discription img{
+    width: 700px;
+    height: 500px;
+}
+span{
+    color: red;
+}
+.title{
+    text-align: center;
+}
+
+#button{
+    margin-top: 40px;
+    height: 100px;
+    width: 300px;
+    background-color: red;
+    color: aliceblue;
+    font-size: 25px;
+    border-radius: 10px;
+    box: shadow 5px; blue;
+    display: flex;
+    margin: 0 auto;
+}
+#image{
+    height: 500px;
+}
+#images{
+    margin-top: 50px;
+    height: 500px;
+}
+#you{
+    height: 500px;
+    width: 400px;
+    font-size: 50px;
+    display: block;
+    margin:  auto;
+    line-height: 500px;
+}
+#you img{
+    height: 500px;
+    width: 400px;
+}
+
+#enemy img{
+    height: 500px;
+    width: 400px;
+}
+
+#enemy{
+    height: 500px;
+    width: 400px;
+    font-size: 50px;
+    display: block;
+    margin:  auto;
+    line-height: 500px;
+}
+.text{
+    display: block;
+    margin: auto;
+}
+.outcome{
+    margin-top: 30px;
+    height: 300px;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+#outcome{
+    line-height: 300px;
+}

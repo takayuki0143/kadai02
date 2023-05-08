@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<title>Why me 部屋</title>
+</head>
+<body>
+
+<!-- コンテンツ表示画面 -->
+<audio id="whyme" src="mp3/why.mp3"></audio>
+
+<audio id="doushite" src="mp3/doushite.mp3"></audio>
+<audio id="sorette" src="mp3/sorette.mp3"></audio>
+<audio id="motto" src="mp3/motto.mp3"></audio>
+<audio id="datoshitara" src="mp3/datoshitara.mp3"></audio>
+<audio id="nande" src="mp3/nande.mp3"></audio>
+<audio id="naniga" src="mp3/naniga.mp3"></audio>
+<audio id="toito" src="mp3/toito .mp3"></audio>
+<audio id="tumari" src="mp3/tumari.mp3"></audio>
+<audio id="kikkake" src="mp3/kikkake.mp3"></audio>
+<audio id="itukara" src="mp3/itukara.mp3"></audio>
+
+
+<div id="main">
+    <div class="title">Why me 部屋</div>
+    <img id="img" src="photo02_sp.jpg" alt="コーチの画像" style="width: 400px; height: 300px;">
+    <div id="toi">どんなプロダクトを作りたいの？</div>
+    <div id="input">
+        <textarea id="text" cols="55" rows="5"></textarea>
+        <button id="send">回答</button>
+        <button id="start">音声</button>
+        <button id="print">印刷</button>
+    </div>
+    <div id="output" style="overflow:auto; height: 600px;"></div>
+</div>
+<!--/ コンテンツ表示画面 -->
+
+
+
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- JQuery -->
+
+
+<!--** 以下Firebase **-->
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+    import { getDatabase, ref, push, set, onChildAdded, remove, onChildRemoved } 
+    from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+    apiKey: "AIzaSyD3N-Np8cO_LTfFVXvcqp0yQA6uDw_KQN4",
+    authDomain: "sample-c3611.firebaseapp.com",
+    databaseURL: "https://sample-c3611-default-rtdb.firebaseio.com",
+    projectId: "sample-c3611",
+    storageBucket: "sample-c3611.appspot.com",
+    messagingSenderId: "804868382857",
+    appId: "1:804868382857:web:3bbe92cbeb1618f2fc6658"
+  };  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const dbRef = ref(db, "chat");
+
+    let toi ="";
+    $("#send").on("click",function(){
+      const t =  Math.ceil(Math.random() * 6);
+      switch(t){
+        case 1:
+            toi = "どうして？";
+            doushite.play();
+            break;
+        case 2:
+            toi = "それってどういうこと？";
+            sorette.play();
+            break;
+        case 3:
+            toi = "もっとくわしくおしえて？";
+            motto.play();
+            break;
+        case 4:
+            toi = "だとしたら？";
+            datoshitara.play();
+            break;
+        case 5:
+            toi = "なんで？";
+            nande.play();
+            break;
+        case 6:
+            toi = "なにがそうさせるの？";
+            naniga.play();
+            break;
+        case 7:
+            toi = "というと？";
+            toito.play();
+            break;
+        case 8:
+            toi = "つまり？";
+            tumari.play();
+            break;
+        case 9:
+            toi = "なにがきっかけ？";
+            kikkake.play();
+            break;
+        case 10:
+            toi = "いつから？";
+            itukara.play();
+            break;
+      }
+        const msg = {
+            text  : $("#text").val()
+        }
+       const newPostRef = push(dbRef); //ユニークキーを生成
+       set(newPostRef,msg);
+       $("#toi").html(toi);
+       $("#text").val("");
+    });
+
+    
+    onChildAdded(dbRef, function(data){
+        const msg = data.val();
+        const key = data.key; //ユニークkey
+        const ans = $("#toi").html();
+        
+        let h = '<p>'
+            h += ans;
+            h += '<br>';
+            h += msg.text;
+            h += '</p>';
+            $("#output").append(h);
+    });
+
+
+    $("#img").on("click",function(){
+        whyme.play();
+    });
+
+    //音声入力させたい
+        const SpeechRecognition =
+        window.webkitSpeechRecognition || window.SpeechRecognition
+        const recognition = new SpeechRecognition();
+
+        recognition.interimResults = true;
+        // recognition.continuous = true;
+        recognition.lang = 'ja-JP'
+
+        
+        recognition.onresult = (event) => {
+        const textInfo = event.results[event.results.length - 1][0]
+        const message = textInfo.transcript
+        console.log(message);
+        $('#text').val(message);
+        }
+
+        // recognition.onend = () => {
+        // recognition.start();
+        // }
+
+        $('#start').on('click', () => {
+        recognition.start();
+        })
+
+        $("#print").on("click",function(){
+            window.print();
+        });
+  </script>
+</body>
+</html>
